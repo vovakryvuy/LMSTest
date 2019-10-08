@@ -38,8 +38,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginVM> i
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mViewModel.checkIsLoginUser();
 		mViewModel.setNavigator(this);
+		mViewModel.checkIsLoginUser();
 		initUI();
 	}
 

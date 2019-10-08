@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.lmstest.BR;
 import com.lmstest.R;
 import com.lmstest.data.view_model.UserModel;
-import com.lmstest.databinding.ActivityMainBinding;
+import com.lmstest.databinding.ActivityUserListBinding;
 import com.lmstest.ui.adapter.UserAdapter;
 import com.lmstest.ui.base.BaseActivity;
 import com.lmstest.ui.login.LoginActivity;
@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import static com.lmstest.utils.Constant.LIMIT_COUNT_PAGINATION;
 
-public class UserListActivity extends BaseActivity<ActivityMainBinding, UserListVM> implements UserListNavigator {
+public class UserListActivity extends BaseActivity<ActivityUserListBinding, UserListVM> implements UserListNavigator {
 	private UserAdapter userAdapter;
 	private LinearLayoutManager linearLayoutManager;
 	private boolean isWaitForPagination = false;
@@ -57,7 +57,7 @@ public class UserListActivity extends BaseActivity<ActivityMainBinding, UserList
 
 	@Override
 	public int getLayoutId() {
-		return R.layout.activity_main;
+		return R.layout.activity_user_list;
 	}
 
 	@Override
