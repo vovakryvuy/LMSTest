@@ -1,8 +1,8 @@
 package com.lmstest.network;
 
-import com.lmstest.network.log_out_response.LogOutResponse;
 import com.lmstest.network.response.BaseResponse;
 import com.lmstest.network.response.list_users_response.BaseUserListResponse;
+import com.lmstest.network.response.log_out_response.LogOutResponse;
 
 import retrofit2.Call;
 import retrofit2.http.DELETE;

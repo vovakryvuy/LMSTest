@@ -8,7 +8,7 @@ import com.google.gson.JsonElement;
 import com.lmstest.data.ManagerSharedPreferences;
 import com.lmstest.data.view_model.UserModel;
 import com.lmstest.network.ApiService;
-import com.lmstest.network.log_out_response.LogOutResponse;
+import com.lmstest.network.response.log_out_response.LogOutResponse;
 import com.lmstest.network.response.ErrorResponse;
 import com.lmstest.network.response.list_users_response.BaseUserListResponse;
 import com.lmstest.ui.base.BaseViewModel;

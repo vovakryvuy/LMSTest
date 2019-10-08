@@ -1,4 +1,4 @@
-package com.lmstest.network.log_out_response;
+package com.lmstest.network.response.log_out_response;
 
 public class LogOutResponse {
 	private int code;
