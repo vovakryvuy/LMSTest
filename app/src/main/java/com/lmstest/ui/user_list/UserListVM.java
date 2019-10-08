@@ -3,7 +3,6 @@ package com.lmstest.ui.user_list;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.lmstest.data.ManagerSharedPreferences;
 import com.lmstest.data.view_model.UserModel;

@@ -79,7 +79,7 @@ public class LoginVM extends BaseViewModel<LoginNavigator> {
 	}
 
 	public void changeCheckRememberMe(boolean isChecked) {
-		managerSharedPreferences.saveIsRemeberMe(isChecked);
+		managerSharedPreferences.saveIsRememberMe(isChecked);
 		isRememberMe.set(isChecked);
 	}
 

@@ -48,7 +48,7 @@ public class ManagerSharedPreferences {
 		return "";
 	}
 
-	public void saveIsRemeberMe(boolean isRememberMe) {
+	public void saveIsRememberMe(boolean isRememberMe) {
 		saveInSharedPreferences(isRememberMe, KEY_REMEMBER_ME);
 	}
 
