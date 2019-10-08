@@ -1,0 +1,29 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="height_logo">90dp</dimen>
+    <dimen name="height_edit_filed">50dp</dimen>
+    <dimen name="height_line">20dp</dimen>
+    <dimen name="height_item_user">70dp</dimen>
+    <dimen name="width_bg_edit_field">1dp</dimen>
+
+    <dimen name="radius_bg_edit_filed">30dp</dimen>
+    <dimen name="radius_bg_login_button">50dp</dimen>
+
+    <dimen name="gap_5dp">5dp</dimen>
+    <dimen name="gap_8dp">8dp</dimen>
+    <dimen name="gap_12dp">12dp</dimen>
+    <dimen name="gap_16dp">16dp</dimen>
+    <dimen name="gap_24dp">24dp</dimen>
+    <dimen name="gap_50dp">50dp</dimen>
+    <dimen name="gap_60dp">60dp</dimen>
+    <dimen name="gap_70dp">70dp</dimen>
+
+    <!--Text Size-->
+    <dimen name="ts_12sp">12sp</dimen>
+    <dimen name="ts_14sp">14sp</dimen>
+    <dimen name="ts_16sp">16sp</dimen>
+    <dimen name="ts_18sp">18sp</dimen>
+
+    <integer name="duration_loading_progress">700</integer>
+</resources>

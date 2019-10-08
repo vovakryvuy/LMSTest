@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e98c3b</color>
+    <color name="colorPrimaryDark">#8F5724</color>
+    <color name="colorAccent">#383838</color>
+
+    <color name="bg_screen">#f6f6f6</color>
+    <color name="main_text_color">#333333</color>
+    <color name="secondary_text_color">#808080</color>
+    <color name="bg_edit_text_field">#ffffff</color>
+
+    <color name="orange_color">#e98c3b</color>
+    <color name="bg_login_button">#e98c3b</color>
+    <color name="bg_login_button_pressed">#8F5724</color>
+    <color name="text_login_button">#ffffff</color>
+
+    <color name="bg_item">#ebebeb</color>
+
+    <color name="grey">#808080</color>
+
+    <color name="transparent">#00ffffff</color>
+</resources>

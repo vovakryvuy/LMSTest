@@ -1,0 +1,17 @@
+*.iml
+.gradle
+/local.properties
+/.idea/navEditor.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+/.idea
+/gradlew
+/gradle/
+/app/debug/
+/app/release/
+/gradle.properties
+
