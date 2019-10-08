@@ -65,7 +65,7 @@ public class LoginVM extends BaseViewModel<LoginNavigator> {
 		if (response.getCode() == HttpURLConnection.HTTP_OK) {
 			AuthResponse authResponse = gson.fromJson((JsonElement) response.getResponse(),
 					AuthResponse.class);
-			managerSharedPreferences.saveToke(authResponse.getToken());
+			managerSharedPreferences.saveToken(authResponse.getToken());
 			managerSharedPreferences.saveAccountId(authResponse.getUser().getAccountId());
 			getNavigator().successLogin();
 			return;
@@ -81,6 +81,16 @@ public class LoginVM extends BaseViewModel<LoginNavigator> {
 	public void changeCheckRememberMe(boolean isChecked) {
 		managerSharedPreferences.saveIsRememberMe(isChecked);
 		isRememberMe.set(isChecked);
+	}
+
+	public void checkIsLoginUser() {
+		ManagerSharedPreferences managerSharedPreferences = ManagerSharedPreferences.getInstance();
+		String token = managerSharedPreferences.getToken();
+		String accountId = managerSharedPreferences.getAccountId();
+		boolean isRemember = managerSharedPreferences.getRememberMe();
+		if (!TextUtils.isEmpty(token) && !TextUtils.isEmpty(accountId) && isRemember){
+			getNavigator().successLogin();
+		}
 	}
 
 	public void clickLogIn() {

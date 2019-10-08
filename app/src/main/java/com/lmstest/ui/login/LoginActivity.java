@@ -3,14 +3,12 @@ package com.lmstest.ui.login;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 
 import com.lmstest.BR;
 import com.lmstest.R;
-import com.lmstest.data.ManagerSharedPreferences;
 import com.lmstest.databinding.ActivityLoginBinding;
 import com.lmstest.ui.base.BaseActivity;
-import com.lmstest.ui.user_list.MainActivity;
+import com.lmstest.ui.user_list.UserListActivity;
 import com.lmstest.utils.UIUtils;
 
 import androidx.annotation.Nullable;
@@ -40,7 +38,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginVM> i
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		checkIsLoginUser();
+		mViewModel.checkIsLoginUser();
 		mViewModel.setNavigator(this);
 		initUI();
 	}
@@ -90,16 +88,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginVM> i
 
 	@Override
 	public void successLogin() {
-		MainActivity.startActivity(this);
+		UserListActivity.startActivity(this);
 		finish();
-	}
-
-	private void checkIsLoginUser() {
-		ManagerSharedPreferences managerSharedPreferences = ManagerSharedPreferences.getInstance();
-		String token = managerSharedPreferences.getToken();
-		String accountId = managerSharedPreferences.getAccountId();
-		boolean isRemember = managerSharedPreferences.getRememberMe();
-		if (!TextUtils.isEmpty(token) && !TextUtils.isEmpty(accountId) && isRemember)
-			successLogin();
 	}
 }

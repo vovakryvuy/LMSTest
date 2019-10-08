@@ -26,7 +26,7 @@ public class ManagerSharedPreferences {
 		return instance;
 	}
 
-	public void saveToke(String companyName) {
+	public void saveToken(String companyName) {
 		saveInSharedPreferences(companyName, KEY_TOKEN);
 	}
 

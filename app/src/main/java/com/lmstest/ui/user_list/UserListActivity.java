@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import static com.lmstest.utils.Constant.LIMIT_COUNT_PAGINATION;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding, UserListVM> implements UserListNavigator {
+public class UserListActivity extends BaseActivity<ActivityMainBinding, UserListVM> implements UserListNavigator {
 	private UserAdapter userAdapter;
 	private LinearLayoutManager linearLayoutManager;
 	private boolean isWaitForPagination = false;
@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, UserListVM> 
 	};
 
 	public static void startActivity(Activity activity) {
-		Intent intent = new Intent(activity, MainActivity.class);
+		Intent intent = new Intent(activity, UserListActivity.class);
 		activity.startActivity(intent);
 	}
 
