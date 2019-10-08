@@ -28,15 +28,17 @@ public class LoginVM extends BaseViewModel<LoginNavigator> {
 		@Override
 		public void onResponse(Call<BaseResponse> call,
 							   Response<BaseResponse> response) {
-			if (response.body() != null)
+			if (response.body() != null){
 				parseAuthData(response.body());
-			else
+			}else {
 				getNavigator().showErrorResponseMessage(response.message());
+			}
+			loading.postValue(false);
 		}
 
 		@Override
 		public void onFailure(Call<BaseResponse> call, Throwable t) {
-
+			loading.postValue(false);
 		}
 	};
 
@@ -65,14 +67,14 @@ public class LoginVM extends BaseViewModel<LoginNavigator> {
 					AuthResponse.class);
 			managerSharedPreferences.saveToke(authResponse.getToken());
 			managerSharedPreferences.saveAccountId(authResponse.getUser().getAccountId());
-			loading.postValue(false);
 			getNavigator().successLogin();
 			return;
 		}
 		ErrorResponse errorResponse = gson.fromJson((JsonElement) response.getResponse(),
 				ErrorResponse.class);
-		if (errorResponse != null && !TextUtils.isEmpty(errorResponse.getResponse().getMessage()))
+		if (errorResponse != null && !TextUtils.isEmpty(errorResponse.getResponse().getMessage())){
 			getNavigator().showErrorResponseMessage(errorResponse.getResponse().getMessage());
+		}
 		loading.postValue(false);
 	}
 

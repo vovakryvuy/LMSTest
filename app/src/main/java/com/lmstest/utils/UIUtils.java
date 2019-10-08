@@ -27,9 +27,9 @@ public class UIUtils {
 	public static ProgressDialog showProgressDialog(Context context) {
 		ProgressDialog dialog = new ProgressDialog(context);
 		dialog.show();
-		if (dialog.getWindow() != null)
+		if (dialog.getWindow() != null){
 			dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
+		}
 		dialog.setContentView(R.layout.dialog_loading);
 		dialog.setIndeterminate(true);
 		dialog.setCancelable(false);

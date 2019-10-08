@@ -96,8 +96,9 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 	public void addToList(List<UserModel> photoList) {
 		if (userList != null) {
 			userList.addAll(photoList);
-			if (userList.size() > 0)
+			if (userList.size() > 0){
 				notifyItemInserted(userList.size() - 1);
+			}
 		}
 	}
 

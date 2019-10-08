@@ -64,10 +64,11 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginVM> i
 	}
 
 	private void showLoading(boolean isShow) {
-		if (isShow)
+		if (isShow){
 			showLoading();
-		else
+		}else {
 			hideLoading();
+		}
 	}
 
 

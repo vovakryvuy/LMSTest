@@ -32,8 +32,9 @@ public class UserListVM extends BaseViewModel<UserListNavigator> {
 	private Callback<LogOutResponse> logOutCallback = new Callback<LogOutResponse>() {
 		@Override
 		public void onResponse(Call<LogOutResponse> call, Response<LogOutResponse> response) {
-			if (response.body() != null)
+			if (response.body() != null){
 				checkLogOutResponse(response.body());
+			}
 		}
 
 		@Override
@@ -44,8 +45,9 @@ public class UserListVM extends BaseViewModel<UserListNavigator> {
 	private Callback<BaseUserListResponse> getUserListCallback = new Callback<BaseUserListResponse>() {
 		@Override
 		public void onResponse(Call<BaseUserListResponse> call, Response<BaseUserListResponse> response) {
-			if (response.body() != null)
+			if (response.body() != null){
 				parseUserListResponse(response.body());
+			}
 		}
 
 		@Override
@@ -89,10 +91,10 @@ public class UserListVM extends BaseViewModel<UserListNavigator> {
 
 	private void parseUserListResponse(BaseUserListResponse response) {
 		if (response.getCode() == HttpURLConnection.HTTP_OK) {
-			JsonArray jsonArray = response.getResponse();
-			List<UserModel> userModelList = parseUserList(jsonArray);
-			if (userModelList.isEmpty() || userModelList.size() < LIMIT_COUNT_PAGINATION)
+			List<UserModel> userModelList = parseUserList(response);
+			if (userModelList.isEmpty() || userModelList.size() < LIMIT_COUNT_PAGINATION){
 				isPaginationFinish = true;
+			}
 			userList.postValue(userModelList);
 			loading.postValue(false);
 			return;
@@ -100,12 +102,13 @@ public class UserListVM extends BaseViewModel<UserListNavigator> {
 		Gson gson = new Gson();
 		ErrorResponse errorResponse = gson.fromJson((JsonElement) response.getResponse(),
 				ErrorResponse.class);
-		if (errorResponse != null && !TextUtils.isEmpty(errorResponse.getResponse().getMessage()))
+		if (errorResponse != null && !TextUtils.isEmpty(errorResponse.getResponse().getMessage())){
 			getNavigator().showErrorResponseMessage(errorResponse.getResponse().getMessage());
+		}
 		loading.postValue(false);
 	}
 
-	public boolean checkPagePagination() {
+	public boolean isPaginationFinish() {
 		return isPaginationFinish;
 	}
 }

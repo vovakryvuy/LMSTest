@@ -77,10 +77,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, UserListVM> 
 	}
 
 	private void showLoading(boolean isShow) {
-		if (isShow)
+		if (isShow){
 			showLoading();
-		else
+		}else {
 			hideLoading();
+		}
 	}
 
 	private void initRecycleView() {
@@ -94,8 +95,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, UserListVM> 
 
 	private void showUserList(List<UserModel> list) {
 		if (list != null && !list.isEmpty() && userAdapter != null) {
-			if (isWaitForPagination)
+			if (isWaitForPagination){
 				userAdapter.removeLoading();
+			}
 			userAdapter.addToList(list);
 		}
 		isWaitForPagination = false;
@@ -110,10 +112,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, UserListVM> 
 					&& !isWaitForPagination
 					&& (visibleItemCount + firstVisibleItemPosition) >= totalItemCount
 					&& firstVisibleItemPosition >= 0 && totalItemCount >= LIMIT_COUNT_PAGINATION
-					&& !mViewModel.checkPagePagination()) {
+					&& !mViewModel.isPaginationFinish()) {
 				isWaitForPagination = true;
-				if (userAdapter != null)
+				if (userAdapter != null){
 					userAdapter.addLoading();
+				}
 				mViewModel.loadListUser();
 			}
 		}
